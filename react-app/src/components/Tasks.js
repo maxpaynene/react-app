@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Task from './Task'
+import PropsType from 'prop-types';
 
 class Tasks extends Component {
     render(){
@@ -11,6 +12,10 @@ class Tasks extends Component {
             })
         )
     }
+}
+
+Tasks.PropsType = {
+    tasks: PropsType.array.isRequired
 }
 
 export default Tasks;

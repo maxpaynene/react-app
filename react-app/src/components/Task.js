@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import './Task.css'
 
 class Task extends Component {
@@ -15,18 +16,24 @@ class Task extends Component {
 
         const { task } = this.props;
 
-        return <div>
-                    {/* Dandole className red para llamar al CSS Task.css */}
-                    <p key={this.props.task.id} style={this.StyleCompleted()} className="red">
-                        {task.id} - 
-                        {task.tittle} - 
-                        {task.description} - 
-                        {task.done.toString()}
-                        <input type="checkbox"/>
-                        <button style={btndelete}>x</button>
-                    </p>
-                </div>
+        return (
+            <div>
+                {/* Dandole className red para llamar al CSS Task.css */}
+                <p key={this.props.task.id} style={this.StyleCompleted()} className="red">
+                    {task.id} - 
+                    {task.tittle} - 
+                    {task.description} - 
+                    {task.done.toString()}
+                    <input type="checkbox"/>
+                    <button style={btndelete}>x</button>
+                </p>
+            </div>
+        )
     }
+}
+
+Task.propTypes = {
+    task: propTypes.object.isRequired
 }
 
 const btndelete = {
