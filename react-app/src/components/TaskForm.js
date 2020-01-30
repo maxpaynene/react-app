@@ -9,6 +9,10 @@ export default class TaskForm extends Component {
 
     onSubmit = e => {
         console.log('submit',this.state);
+        this.props.addTask(
+            this.state.tittle,
+            this.state.description
+        );
         e.preventDefault();
     }
 

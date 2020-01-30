@@ -7,7 +7,12 @@ class Tasks extends Component {
         return (
             this.props.tasks.map((task,index)=>{
                 return (
-                    <Task task={task} key={index}/>
+                    <Task 
+                        task={task} 
+                        key={index} 
+                        deleteTask={ this.props.deleteTask }
+                        checkDone={ this.props.checkDone }
+                    />
                 )
             })
         )
